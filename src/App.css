@@ -2,3 +2,8 @@
 #jumbotron {
   min-height: 100vh;
 }
+
+/* footer section */
+#footer {
+  padding: 20px 0;
+}
