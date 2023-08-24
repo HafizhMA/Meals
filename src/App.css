@@ -1,3 +1,8 @@
+/* navbar section */
+.navbar {
+  background-color: rgb(255, 198, 172);
+}
+
 /* jumbotron section */
 #jumbotron {
   min-height: 100vh;
