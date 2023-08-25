@@ -20,3 +20,5 @@ async function getCategoriesMeals() {
     return { success: false, error: error.message };
   }
 }
+
+export { getListMeals, getCategoriesMeals };
