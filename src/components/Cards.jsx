@@ -17,7 +17,7 @@ const Cards = () => {
     return (
       <Card>
         <Card.Img variant="top" src={categorie.strCategoryThumb} />
-        <Card.Body>
+        <Card.Body className="text-center">
           <Card.Title>{categorie.strCategory}</Card.Title>
         </Card.Body>
       </Card>
