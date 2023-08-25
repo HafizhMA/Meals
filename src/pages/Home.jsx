@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import jumbotronImg from "../assets/jumbotronimg.png";
+import Cards from "../components/Cards";
 
 const Home = () => {
   return (
@@ -15,6 +16,11 @@ const Home = () => {
           <div className="imgjumbotron">
             <img src={jumbotronImg} alt="" />
           </div>
+        </div>
+      </section>
+      <section id="mealsCard">
+        <div className="container">
+          <Cards />
         </div>
       </section>
       <Footer />
