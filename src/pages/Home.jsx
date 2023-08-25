@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <section id="jumbotron">
+      <section id="jumbotron" className="d-flex align-items-center">
         <div className="container d-flex flex-wrap align-items-center justify-content-center">
           <div className="textjumbotron">
             <h2>choose the food you want</h2>
