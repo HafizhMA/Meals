@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { getListMeals } from "../api/api";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   const [categories, setCategories] = useState([]);
@@ -18,7 +19,12 @@ const Cards = () => {
       <Card>
         <Card.Img variant="top" src={categorie.strCategoryThumb} />
         <Card.Body className="text-center">
-          <Card.Title>{categorie.strCategory}</Card.Title>
+          <Link
+            className="cardLink"
+            to={`/categories/${categorie.strCategory}`}
+          >
+            <Card.Title>{categorie.strCategory}</Card.Title>
+          </Link>
         </Card.Body>
       </Card>
     );

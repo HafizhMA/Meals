@@ -16,6 +16,7 @@ async function getCategoriesMeals(strCategory) {
     const response = await axios.get(
       `${baseUrl}json/v1/1/filter.php?c=${strCategory}`
     );
+    return response.data.meals;
   } catch (error) {
     return { success: false, error: error.message };
   }
