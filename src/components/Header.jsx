@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -11,10 +12,9 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Item className="mx-3" href="#home">
-              Home
-            </Nav.Item>
-            <Nav.Item className="mx-3" href="#link">
-              Link
+              <Link to="/" className="nav-link text-decoration-none text-black">
+                Home
+              </Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
