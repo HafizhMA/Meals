@@ -11,7 +11,7 @@ async function getListMeals() {
   }
 }
 
-async function getCategoriesMeals() {
+async function getCategoriesMeals(strCategory) {
   try {
     const response = await axios.get(
       `${baseUrl}json/v1/1/filter.php?c=${strCategory}`
