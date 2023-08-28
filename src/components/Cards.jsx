@@ -16,15 +16,12 @@ const Cards = () => {
 
   function MealsCard({ categorie }) {
     return (
-      <Card>
-        <Card.Img variant="top" src={categorie.strCategoryThumb} />
+      <Card id="homeCard">
+        <Link id="cardLink" to={`/categories/${categorie.strCategory}`}>
+          <Card.Img variant="top" src={categorie.strCategoryThumb} />
+        </Link>
         <Card.Body className="text-center">
-          <Link
-            className="cardLink"
-            to={`/categories/${categorie.strCategory}`}
-          >
-            <Card.Title>{categorie.strCategory}</Card.Title>
-          </Link>
+          <Card.Title>{categorie.strCategory}</Card.Title>
         </Card.Body>
       </Card>
     );
