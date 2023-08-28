@@ -26,11 +26,13 @@ const CategoriesCard = () => {
 
   return (
     <div>
-      <h2>{strCategory}Category</h2>
+      <div className="text-center my-3">
+        <h2>{strCategory} Category</h2>
+      </div>
       <div className="row">
         {categoryData.map((meal) => (
           <div className="col-lg-4 col-md-6 col-sm-12 my-3" key={meal.idMeal}>
-            <Card>
+            <Card id="card">
               <Card.Img variant="top" src={meal.strMealThumb} />
               <Card.Body className="text-center">
                 <Card.Title>{meal.strMeal}</Card.Title>

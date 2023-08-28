@@ -16,7 +16,7 @@ const Cards = () => {
 
   function MealsCard({ categorie }) {
     return (
-      <Card id="homeCard">
+      <Card id="card">
         <Link id="cardLink" to={`/categories/${categorie.strCategory}`}>
           <Card.Img variant="top" src={categorie.strCategoryThumb} />
         </Link>
