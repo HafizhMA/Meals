@@ -22,4 +22,15 @@ async function getCategoriesMeals(strCategory) {
   }
 }
 
-export { getListMeals, getCategoriesMeals };
+async function getDetailMeals(idMeal) {
+  try {
+    const response = await axios.get(
+      `${baseUrl}json/v1/1/lookup.php?i=${idMeal}`
+    );
+    return response.data.meals;
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+}
+
+export { getListMeals, getCategoriesMeals, getDetailMeals };
