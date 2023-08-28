@@ -21,7 +21,11 @@ const CategoriesCard = () => {
   }, [strCategory]);
 
   if (!categoryData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center">
+        <h4>Loading...</h4>
+      </div>
+    );
   }
 
   return (
