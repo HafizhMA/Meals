@@ -22,7 +22,7 @@ const DetailCardMeals = () => {
 
   if (!detailMealsData) {
     return (
-      <div className="text-text-center my-3">
+      <div className="text-center my-3">
         <h4>Loading...</h4>
       </div>
     );
