@@ -36,7 +36,7 @@ const DetailCardMeals = () => {
             <div className="col" key={meal.idMeal}>
               <Card id="card">
                 <Card.Img variant="top" src={meal.strMealThumb} />
-                <Card.Body className="text-center">
+                <Card.Body>
                   <Card.Title>{meal.strMeal}</Card.Title>
                   <Card.Text>{meal.strInstructions}</Card.Text>
                 </Card.Body>
