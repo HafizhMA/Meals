@@ -29,19 +29,23 @@ const DetailCardMeals = () => {
   }
 
   return (
-    <div className="row d-flex justify-content-center">
-      {detailMealsData.map((meal) => (
-        <div className="col" key={meal.idMeal}>
-          <Card id="card">
-            <Card.Img variant="top" src={meal.strMealThumb} />
-            <Card.Body className="text-center">
-              <Card.Title>{meal.strMeal}</Card.Title>
-              <Card.Text>{meal.strInstructions}</Card.Text>
-            </Card.Body>
-          </Card>
+    <section id="detailMealsCard" className="min-vh-100 my-5">
+      <div className="container">
+        <div className="row d-flex justify-content-center">
+          {detailMealsData.map((meal) => (
+            <div className="col" key={meal.idMeal}>
+              <Card id="card">
+                <Card.Img variant="top" src={meal.strMealThumb} />
+                <Card.Body className="text-center">
+                  <Card.Title>{meal.strMeal}</Card.Title>
+                  <Card.Text>{meal.strInstructions}</Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -7,9 +7,7 @@ const DetailMealsPage = () => {
   return (
     <>
       <Header />
-      <div className="container">
-        <DetailCardMeals />
-      </div>
+      <DetailCardMeals />
       <Footer />
     </>
   );
