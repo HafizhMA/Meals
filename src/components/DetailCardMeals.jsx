@@ -38,7 +38,21 @@ const DetailCardMeals = () => {
                 <Card.Img variant="top" src={meal.strMealThumb} />
                 <Card.Body>
                   <Card.Title>{meal.strMeal}</Card.Title>
+                  <div className="d-flex flex-wrap justify-content-center">
+                    <Card.Text>Category: {meal.strCategory}</Card.Text>
+                    <Card.Text className="mx-4">Area: {meal.strArea}</Card.Text>
+                    <Card.Text>Tags: {meal.strTags}</Card.Text>
+                  </div>
                   <Card.Text>{meal.strInstructions}</Card.Text>
+                  <div id="strYoutube" className="video-container">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${
+                        meal.strYoutube.split("=")[1]
+                      }`}
+                      frameborder="0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
                 </Card.Body>
               </Card>
             </div>
