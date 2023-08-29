@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { getCategoriesMeals } from "../api/api";
 
@@ -37,7 +37,9 @@ const CategoriesCard = () => {
         {categoryData.map((meal) => (
           <div className="col-lg-4 col-md-6 col-sm-12 my-3" key={meal.idMeal}>
             <Card id="card">
-              <Card.Img variant="top" src={meal.strMealThumb} />
+              <Link id="cardLink" to={`/detail/${meal.idMeal}`}>
+                <Card.Img variant="top" src={meal.strMealThumb} />
+              </Link>
               <Card.Body className="text-center">
                 <Card.Title>{meal.strMeal}</Card.Title>
                 <Card.Text>{meal.strInstructions}</Card.Text>

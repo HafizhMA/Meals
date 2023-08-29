@@ -20,7 +20,29 @@ const DetailCardMeals = () => {
     fetchDetailMeals();
   }, [idMeal]);
 
-  return <div>DetailCardMeals</div>;
+  if (!detailMealsData) {
+    return (
+      <div className="text-text-center my-3">
+        <h4>Loading...</h4>
+      </div>
+    );
+  }
+
+  return (
+    <div className="row d-flex justify-content-center">
+      {detailMealsData.map((meal) => (
+        <div className="col" key={meal.idMeal}>
+          <Card id="card">
+            <Card.Img variant="top" src={meal.strMealThumb} />
+            <Card.Body className="text-center">
+              <Card.Title>{meal.strMeal}</Card.Title>
+              <Card.Text>{meal.strInstructions}</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default DetailCardMeals;
