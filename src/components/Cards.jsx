@@ -46,7 +46,7 @@ const Cards = () => {
       </div>
       <div className="row">
         {filteredMeals.length === 0 ? (
-          <p>tidak ditemukan</p>
+          <p className="my-2">tidak ditemukan</p>
         ) : (
           filteredMeals.map((categorie) => (
             <div
