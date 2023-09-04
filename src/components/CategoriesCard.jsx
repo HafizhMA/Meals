@@ -43,7 +43,7 @@ const CategoriesCard = () => {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Cari kategori menu..."
+          placeholder="Cari makanan..."
           value={searchCategory}
           onChange={(e) => setSearchCategory(e.target.value)}
         />
