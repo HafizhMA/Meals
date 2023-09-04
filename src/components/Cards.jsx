@@ -7,11 +7,12 @@ const Cards = () => {
   const [categories, setCategories] = useState([]);
   const [searchMeals, setSearchMeals] = useState("");
 
+  async function fetchData() {
+    const mealsData = await getListMeals();
+    setCategories(mealsData);
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const mealsData = await getListMeals();
-      setCategories(mealsData);
-    }
     fetchData();
   }, []);
 
@@ -46,7 +47,7 @@ const Cards = () => {
       </div>
       <div className="row">
         {filteredMeals.length === 0 ? (
-          <p className="my-2">tidak ditemukan</p>
+          <p className="my-3">tidak ditemukan</p>
         ) : (
           filteredMeals.map((categorie) => (
             <div
