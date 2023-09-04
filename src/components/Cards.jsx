@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Cards = () => {
   const [categories, setCategories] = useState([]);
+  const [searchMeals, setSearchMeals] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -27,17 +28,35 @@ const Cards = () => {
     );
   }
 
+  const filteredMeals = searchMeals
+    ? categories.filter((categorie) =>
+        categorie.strCategory.toLowerCase().includes(searchMeals.toLowerCase())
+      )
+    : categories;
+
   return (
     <div>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Cari nama kategori makanan..."
+          value={searchMeals}
+          onChange={(e) => setSearchMeals(e.target.value)}
+        />
+      </div>
       <div className="row">
-        {categories.map((categorie) => (
-          <div
-            className="col-lg-4 col-md-6 col-sm-12 my-3"
-            key={categorie.idCategory}
-          >
-            <MealsCard categorie={categorie} />
-          </div>
-        ))}
+        {filteredMeals.length === 0 ? (
+          <p>tidak ditemukan</p>
+        ) : (
+          filteredMeals.map((categorie) => (
+            <div
+              className="col-lg-4 col-md-6 col-sm-12 my-3"
+              key={categorie.idCategory}
+            >
+              <MealsCard categorie={categorie} />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
