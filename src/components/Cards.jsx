@@ -40,7 +40,7 @@ const Cards = () => {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Cari nama kategori makanan..."
+          placeholder="Cari kategori menu..."
           value={searchMeals}
           onChange={(e) => setSearchMeals(e.target.value)}
         />
