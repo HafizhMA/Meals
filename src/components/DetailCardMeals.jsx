@@ -35,41 +35,37 @@ const DetailCardMeals = () => {
   }
 
   return (
-    <>
-      <section id="detailMealsCard" className="min-vh-100 my-5">
-        <div className="container">
-          <div className="row d-flex justify-content-center">
-            {detailMealsData.map((meal) => (
-              <div className="col" key={meal.idMeal}>
-                <Card id="card">
-                  <Card.Img variant="top" src={meal.strMealThumb} />
-                  <Card.Body>
-                    <Card.Title>{meal.strMeal}</Card.Title>
-                    <div className="d-flex flex-wrap justify-content-center">
-                      <Card.Text>Category: {meal.strCategory}</Card.Text>
-                      <Card.Text className="mx-4">
-                        Area: {meal.strArea}
-                      </Card.Text>
-                      <Card.Text>Tags: {meal.strTags}</Card.Text>
-                    </div>
-                    <Card.Text>{meal.strInstructions}</Card.Text>
-                    <div id="strYoutube" className="video-container">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${
-                          meal.strYoutube.split("=")[1]
-                        }`}
-                        frameborder="0"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </div>
-            ))}
-          </div>
+    <section id="detailMealsCard" className="min-vh-100 my-5">
+      <div className="container">
+        <div className="row d-flex justify-content-center">
+          {detailMealsData.map((meal) => (
+            <div className="col" key={meal.idMeal}>
+              <Card id="card">
+                <Card.Img variant="top" src={meal.strMealThumb} />
+                <Card.Body>
+                  <Card.Title>{meal.strMeal}</Card.Title>
+                  <div className="d-flex flex-wrap justify-content-center">
+                    <Card.Text>Category: {meal.strCategory}</Card.Text>
+                    <Card.Text className="mx-4">Area: {meal.strArea}</Card.Text>
+                    <Card.Text>Tags: {meal.strTags}</Card.Text>
+                  </div>
+                  <Card.Text>{meal.strInstructions}</Card.Text>
+                  <div id="strYoutube" className="video-container">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${
+                        meal.strYoutube.split("=")[1]
+                      }`}
+                      frameborder="0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </Card.Body>
+              </Card>
+            </div>
+          ))}
         </div>
-      </section>
-      <div className="d-flex flex-row-reverse">
+      </div>
+      <div className="mt-3 mx-2 d-flex flex-row-reverse">
         {isHeartFilled ? (
           <AiFillHeart
             id="heartFill"
@@ -86,7 +82,7 @@ const DetailCardMeals = () => {
           />
         )}
       </div>
-    </>
+    </section>
   );
 };
 
