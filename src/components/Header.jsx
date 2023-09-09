@@ -16,6 +16,14 @@ function Header() {
                 Home
               </Link>
             </Nav.Item>
+            <Nav.Item className="mx-3">
+              <Link
+                to="/favorite"
+                className="nav-link text-decoration-none text-black"
+              >
+                Favorite
+              </Link>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

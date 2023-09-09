@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { getDetailMeals } from "../api/api";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
 
 const DetailCardMeals = () => {
   const { idMeal } = useParams();
@@ -19,11 +21,28 @@ const DetailCardMeals = () => {
         console.log("error fetching", error);
       }
     }
+
+    const favMeals = JSON.parse(localStorage.getItem("favoriteMeals")) || [];
+    setIsHeartFilled(favMeals.includes(idMeal));
+
     fetchDetailMeals();
   }, [idMeal]);
 
   const handleHeartClick = () => {
-    setIsHeartFilled(!isHeartFilled); // Toggle the state
+    setIsHeartFilled(!isHeartFilled);
+
+    const favMeals = JSON.parse(localStorage.getItem("favoriteMeals")) || [];
+
+    if (isHeartFilled) {
+      const index = favMeals.indexOf(idMeal);
+      if (index > -1) {
+        favMeals.splice(index, 1);
+      }
+    } else {
+      favMeals.push(idMeal);
+    }
+
+    localStorage.setItem("favoriteMeals", JSON.stringify(favMeals));
   };
 
   if (!detailMealsData) {
@@ -37,9 +56,9 @@ const DetailCardMeals = () => {
   return (
     <section id="detailMealsCard" className="min-vh-100 my-5">
       <div className="container">
-        <div className="row d-flex justify-content-center">
+        <Row className="d-flex justify-content-center">
           {detailMealsData.map((meal) => (
-            <div className="col" key={meal.idMeal}>
+            <Col key={meal.idMeal}>
               <Card id="card">
                 <Card.Img variant="top" src={meal.strMealThumb} />
                 <Card.Body>
@@ -61,9 +80,9 @@ const DetailCardMeals = () => {
                   </div>
                 </Card.Body>
               </Card>
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
       <div className="mt-3 mx-2 d-flex flex-row-reverse">
         {isHeartFilled ? (
